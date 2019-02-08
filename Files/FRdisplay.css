@@ -1,0 +1,152 @@
+
+html, body, h1, h2, h3, h4, h5, h6, div, ul, p {
+    margin: 0;
+    padding: 0;
+    font-family: verdana, sans-serif;
+    font-size: 14px;
+ }
+ul {
+    list-style-type: none;
+}
+li {
+    padding: 3px 0px 2px 0px;
+}
+h1 {
+    text-align: center;
+    font-size: 26px;
+    padding-top: 20px;
+}
+h4 {
+    background-color: #ddd;
+    color: #000;
+    font-size: 16px;
+    text-align: center;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    display: block;
+    margin: 35px 0 0 0;
+}
+h4:nth-child(2) {   /* wtf does this select the first h4?? */
+    margin-top: 5px;
+}
+.main-container {
+    max-width: 900px;
+    width: 75%;
+    min-width: 825px; /* this might fuck some shit up */
+    margin: 0 auto;
+    border: 2px solid #000;
+    
+    display: grid;
+    grid-template-rows: 75px auto auto auto auto auto;
+}
+.main-container div {
+    width: 100%;
+}
+.header {
+    display: flex;
+    grid-template-columns: 1fr, 3fr, 1fr;
+    justify-content: space-between;
+    text-align: right;
+}
+.header > div:first-child {
+    width: 150px;
+    height: auto;
+    background: url(bfplogo.png) center no-repeat;
+    background-size: 99%;
+}
+.header > div:last-child {
+    width: 100px;
+    height: auto;
+    font-size: 11px;
+}
+.header p {
+    font-size: 10px;
+}
+
+.jobinfo {
+    display: flex;
+    justify-content: space-around;
+}
+.jobinfo ul {
+    max-width: 200px;
+    flex: 1 1 200px;
+}
+.jobinfo ul li {
+    display: flex;
+    flex: 1 0 auto;
+    text-align: right;
+}
+.jobinfo ul li label {
+    flex: 1 0 auto; 
+}
+.jobinfo ul li input {
+}
+
+.employee ul, .equipment ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+}
+.employee ul:first-child, .equipment ul:first-child, .trucks ul:first-child,
+.report ul:first-child {
+    border-bottom: 1px solid #000;
+}   /* This puts a border under the first UL which is basically the table headers */
+.employee li input, .equipment li input {
+    max-width: 125px;
+}
+.trucks ul {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-items: center;
+}
+.trucks li input {
+    max-width: 90px;
+    flex-shrink: 1;
+}
+.report ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+}
+.trucks li input {
+    max-width: 90px;
+    flex-shrink: 1;
+}
+
+
+
+.trucks {
+    
+}
+.report {
+    margin-bottom: 25px;
+}
+
+
+.hiddeninputs {
+    display: none;
+}
+.hidden {
+    display: none;
+}
+
+
+#timestamp {
+    font-size: 11px;
+}
+#ipstamp {
+    color: #fff;
+}
+.center{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+

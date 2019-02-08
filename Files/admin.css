@@ -1,0 +1,30 @@
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+.hidden {
+    display: none;
+}
+.center {
+	margin: 0 auto;
+	width: 80%;
+    max-width: 850px;
+	}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    align-items: start;
+    height: auto;
+}
+.left-column h5{
+    padding-left: 15px;
+}
+.middle-column, .middle-column-2 {
+
+}
+.right-column {
+
+}
+
