@@ -1,5 +1,5 @@
 <?php
-include("PHPs/dbconnect.fr.inc.php");
+include("dbconnect.fr.inc.php");
 
 if (isset($_GET["edit"])) {
     $UpdateHere = $_GET["edit"];
@@ -15,7 +15,7 @@ if (isset($_GET["edit"])) {
         if ($update_foreman_result) {
             echo "Successfully updated Foreman record for " . $Foreman;
             echo "<script type='text/javascript'>
-                window.location = 'admin.php';
+                window.location = '../admin.php';
                 </script>";
         }
 
@@ -31,7 +31,7 @@ if (isset($_GET["edit"])) {
         if ($update_employee_result) {
             echo "Successfully updated Employee record for " . $Employee;
             echo "<script type='text/javascript'>
-                window.location = 'admin.php';
+                window.location = '../admin.php';
                 </script>";
         }
 
@@ -50,7 +50,7 @@ if (isset($_GET["edit"])) {
         if ($update_equip_result) {
             echo "Successfully updated Equipment record for " . $EquipID;
             echo "<script type='text/javascript'>
-                window.location = 'admin.php';
+                window.location = '../admin.php';
                 </script>";
         }
 
@@ -72,7 +72,7 @@ if (isset($_GET["edit"])) {
         if ($add_foreman_result) {
             echo "Successfully added Foreman: " . $Foreman;
             echo "<script type='text/javascript'>
-                window.location = 'admin.php';
+                window.location = '../admin.php';
                 </script>";
         }
 
@@ -86,7 +86,7 @@ if (isset($_GET["edit"])) {
         if ($add_employee_result) {
             echo "Successfully added Employee: " . $Employee;
             echo "<script type='text/javascript'>
-                window.location = 'admin.php';
+                window.location = '../admin.php';
                 </script>";
         }
         
@@ -103,7 +103,7 @@ if (isset($_GET["edit"])) {
         if ($add_equip_result) {
             echo "Successfully added equipment: " . $EquipID;
             echo "<script type='text/javascript'>
-                window.location = 'admin.php';
+                window.location = '../admin.php';
                 </script>";
         }
         

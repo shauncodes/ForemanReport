@@ -32,7 +32,7 @@
 <div class="center">
     <div class="main-container">
         <div class="left-column">
-            <h4><a href="#" onclick="loadDoc('2019.imbed.php', displayOne);">Get Foreman Report</a></h4>
+            <h4><a href="#" onclick="loadDoc('PHPs/2019reports.imbed.php', displayOne);">Get Foreman Report</a></h4>
             <br /><br />
             <h4><a target="new" href="timesheet.php">Get Time Sheet</a></h4>
         </div>   

@@ -32,9 +32,9 @@
     <div class="main-container">
         <div class="left-column">
             <h4>Edit Database</h4>
-            <h5><a href="#" onclick="loadDoc('editdb.imbed.php?edit=foremen', displayOne);">Foremen</a></h5>
-            <h5><a href="#" onclick="loadDoc('editdb.imbed.php?edit=employees', displayOne);">Employees</a></h5>
-            <h5><a href="#" onclick="loadDoc('editdb.imbed.php?edit=equipment', displayOne);">Equipment</a></h5>
+            <h5><a href="#" onclick="loadDoc('imbed.editdb.php?edit=foremen', displayOne);">Foremen</a></h5>
+            <h5><a href="#" onclick="loadDoc('imbed.editdb.php?edit=employees', displayOne);">Employees</a></h5>
+            <h5><a href="#" onclick="loadDoc('imbed.editdb.php?edit=equipment', displayOne);">Equipment</a></h5>
         </div>   
         <div class="middle-column" id="display">
         </div>
