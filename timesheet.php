@@ -52,7 +52,7 @@
 			<p>Time Sheet for week starting on: <input id='datepicker' name='Date' type='text' size='15' autocomplete='off' required />
 			</p>
             <p>
-                <input type='button' name='getTS' id='TSBUTTON' value='Get Timesheet' />
+                <input type='submit' name='getTS' id='TSBUTTON' value='Get Timesheet' />
             </p>
         </form>";
         } else {

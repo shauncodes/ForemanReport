@@ -10,14 +10,15 @@ function loaded() {
 
 
 function getTimeSheet() {
-    checkForMonday(document.getElementById("datepicker").value);
-    var foremanFail = document.getElementById("foreman").value;
-    var dateFail = document.getElementById("datepicker").value;
-	if (foremanFail == "-- select --" || dateFail == "") {
-		alert("Please Select a Foreman and a Date.");
-		return false;
-	} else {
-        document.getElementById("createtsFORM").submit();
+    if (checkForMonday(document.getElementById("datepicker").value)) {
+        var foremanFail = document.getElementById("foreman").value;
+        var dateFail = document.getElementById("datepicker").value;
+        if (foremanFail == "-- select --" || dateFail == "") {
+            alert("Please Select a Foreman and a Date.");
+            return false;
+        } else {
+            document.getElementById("createtsFORM").submit();
+        }
     }
 }
 function checkForMonday(selectedDate) {
@@ -33,8 +34,13 @@ function checkForMonday(selectedDate) {
 	
 	var myDate = new Date(yearr, monthh, dayy); // Set the 3 values to a new Date()
 	if (myDate.getDay() != 1) { // getDay checks day of the week. 0 for sunday, 0-6. 1 = monday.
-		alert("Please choose a Monday.");    
-	}
+		alert("Please choose a Monday."); 
+        return false;
+        die();
+	} else {
+        return true;
+    }
+    return;
 }
 
 
