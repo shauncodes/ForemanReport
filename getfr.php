@@ -26,14 +26,14 @@
     <h4>Job Info</h4>
     <div class="jobinfo">
         <ul>
-            <li><label for="Foreman">Foreman: </label><div name="Foreman"><?php echo $Foreman; ?></div></li>    
-            <li><label for="JobName">Job Name: </label><div name="JobName"><?php echo $JobName; ?></div></li>
-            <li><label for="JobNum">Job #: </label><div name="JobNum"><?php echo $JobNum; ?></div></li>
+            <li><label for="Foreman">Foreman: </label><div name="Foreman" class="report-info"><?php echo $Foreman; ?></div></li>    
+            <li><label for="JobName">Job Name: </label><div name="JobName" class="report-info"><?php echo $JobName; ?></div></li>
+            <li><label for="JobNum">Job #: </label><div name="JobNum" class="report-info"><?php echo $JobNum; ?></div></li>
         </ul>
         <ul>
-            <li><label for="Temp">Temp: </label><div name="Temp"><?php echo $Temp; ?></div></li>
-            <li><label for="Grade">Grade: </label><div name="Grade"><?php echo $Grade; ?></div></li>
-            <li><label for="Date">Date: </label><div name="Date"><?php echo $DayOfWeek." ".$Date; ?></div></li>
+            <li><label for="Temp">Temp: </label><div name="Temp" class="report-info"><?php echo $Temp; ?></div></li>
+            <li><label for="Grade">Grade: </label><div name="Grade" class="report-info"><?php echo $Grade; ?></div></li>
+            <li><label for="Date">Date: </label><div name="Date" class="report-info"><?php echo $DayOfWeek." ".$Date; ?></div></li>
         </ul>
     </div>
     
@@ -51,10 +51,10 @@
     if (isset(${"Emp".$e})) {
         for ($e = 1; (${"Emp".$e} != NULL); $e++) {
             echo "<ul>
-                    <li><div>" . ${"Emp".$e} . "</div></li>
-                    <li><div>" . ${"TimeIn".$e} . "</div></li>
-                    <li><div>" . ${"TimeOut".$e} . "</div></li>
-                    <li><div>" . ${"Total".$e} . "</div></li>
+                    <li><div class='report-info'>" . ${"Emp".$e} . "</div></li>
+                    <li><div class='report-info'>" . ${"TimeIn".$e} . "</div></li>
+                    <li><div class='report-info'>" . ${"TimeOut".$e} . "</div></li>
+                    <li><div class='report-info'>" . ${"Total".$e} . "</div></li>
                 </ul>";
            }
     }
@@ -76,10 +76,10 @@
         for ($e = 1; ${"Equip".$e} != NULL; $e++) {
             echo "
                 <ul>
-                    <li><div>" . ${"Equip".$e} . "</div></li>
-                    <li><div>" . ${"OdoStart".$e} . "</div></li>
-                    <li><div>" . ${"OdoEnd".$e} . "</div></li>
-                    <li><div>" . ${"OdoTotal".$e} . "</div></li>
+                    <li><div class='report-info'>" . ${"Equip".$e} . "</div></li>
+                    <li><div class='report-info'>" . ${"OdoStart".$e} . "</div></li>
+                    <li><div class='report-info'>" . ${"OdoEnd".$e} . "</div></li>
+                    <li><div class='report-info'>" . ${"OdoTotal".$e} . "</div></li>
                 </ul>";
         }
     }
@@ -103,13 +103,13 @@
     if (isset(${"Truck".$t})) {
         for ($t=1; ${"Truck".$t} != NULL; $t++) {
             echo "<ul>
-                    <li><div>" . ${"Truck".$t} . "</div></li>
-                    <li><div>" . ${"TTimeIn".$t} . "</div></li>
-                    <li><div>" . ${"TTimeOut".$t} . "</div></li>
-                    <li><div>" . ${"TTotal".$t} . "</div></li>
-                    <li><div>" . ${"Prod".$t} . "</div></li>
-                    <li><div>" . ${"Loc".$t} . "</div></li>
-                    <li><div>" . ${"Tons".$t} . "</div></li>                    
+                    <li><div class='report-info'>" . ${"Truck".$t} . "</div></li>
+                    <li><div class='report-info'>" . ${"TTimeIn".$t} . "</div></li>
+                    <li><div class='report-info'>" . ${"TTimeOut".$t} . "</div></li>
+                    <li><div class='report-info'>" . ${"TTotal".$t} . "</div></li>
+                    <li><div class='report-info'>" . ${"Prod".$t} . "</div></li>
+                    <li><div class='report-info'>" . ${"Loc".$t} . "</div></li>
+                    <li><div class='report-info'>" . ${"Tons".$t} . "</div></li>                    
                 </ul>";
         }
     }
@@ -124,8 +124,8 @@
             <li>Extras/ Concerns</li>
         </ul>
         <ul>
-            <li><div><?php echo $ActualFR; ?></div></li>
-            <li><div><?php echo $ExtrasConcerns; ?></div></li>
+            <li><div class="report-info"><?php echo $ActualFR; ?></div></li>
+            <li><div class="report-info"><?php echo $ExtrasConcerns; ?></div></li>
         </ul>
     </div>
    

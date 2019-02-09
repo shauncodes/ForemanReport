@@ -36,7 +36,6 @@ function checkForMonday(selectedDate) {
 	if (myDate.getDay() != 1) { // getDay checks day of the week. 0 for sunday, 0-6. 1 = monday.
 		alert("Please choose a Monday."); 
         return false;
-        die();
 	} else {
         return true;
     }

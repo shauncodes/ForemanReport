@@ -27,7 +27,7 @@
     <h4>Job Info</h4>
     <div class="jobinfo">
         <ul>
-            <li><label for="Foreman">Foreman: </label><input name="Foreman" value="<?php echo $_POST['Foreman']; ?>" id="foreman" type="text" required/></li>    
+            <li><label for="Foreman">Foreman: </label><div id="Foreman"><?php echo $_POST['Foreman']; ?></div><input class="hidden" name="Foreman" value="<?php echo $_POST['Foreman']; ?>" id="foreman" type="text" required/></li>    
             <li><label for="JobName">Job Name: </label><input name="JobName" value="<?php echo $_POST['JobName']; ?>" type="text" /></li>
             <li><label for="JobNum">Job #: </label><input name="JobNum" value="<?php echo $_POST['JobNum']; ?>" type="text" required/></li>
         </ul>
@@ -52,7 +52,7 @@ for ($e = 1; isset($_POST["Emp".$e]) && ($_POST["Emp".$e] != "Employee"); $e++) 
     $category = 1;
     echo "
         <ul>
-            <li><input name='Emp".$e."' value='".$_POST['Emp'.$e]."' type='text' /></li>
+            <li><div id='Emp".$e."'>".$_POST['Emp'.$e]."</div><input class='hidden' name='Emp".$e."' value='".$_POST['Emp'.$e]."' type='text' /></li>
             <li><input id='EmpTimeIn".$e."' name='EmpTimeIn".$e."' value='".$_POST['EmpTimeIn'.$e]."' class='timepicker' onFocusOut='totalTime(".$category.", ".$e.");' autocomplete='off' type='text' /></li>
             <li><input id='EmpTimeOut".$e."' name='EmpTimeOut".$e."' value='".$_POST['EmpTimeOut'.$e]."' class='timepicker' onFocusOut='totalTime(".$category.", ".$e.");' autocomplete='off' type='text' /></li>
             <li><div id='EmpTotal".$e."'>".$_POST['EmpTotal'.$e]."</div><input class='hidden' name='EmpTotal".$e."' value='".$_POST['EmpTotal'.$e]."' type='text' /></li>
@@ -74,10 +74,10 @@ for ($e = 1; isset($_POST["Emp".$e]) && ($_POST["Emp".$e] != "Employee"); $e++) 
 for ($e = 1; isset($_POST["Equip".$e]) && ($_POST["Equip".$e] != "Equip ID"); $e++) {
     echo "
         <ul>
-            <li><input name='Equip".$e."' value='".$_POST['Equip'.$e]."'></li>
+            <li><div id='Equip".$e."'>".$_POST['Equip'.$e]."</div><input class='hidden' name='Equip".$e."' value='".$_POST['Equip'.$e]."'></li>
             <li><input id='EquipOdoStart".$e."' name='EquipOdoStart".$e."' value='".$_POST['EquipOdoStart'.$e]."' onFocusOut='totalOdo(".$e.")' type='text' /></li>
             <li><input id='EquipOdoEnd".$e."' name='EquipOdoEnd".$e."' value='".$_POST['EquipOdoEnd'.$e]."' onFocusOut='totalOdo(".$e.")' type='text' /></li>
-            <li><div id='EquipOdoTotal".$e."'>".$_POST['EquipOdoTotal'.$e]."</div><input name='EquipOdoTotal".$e."' class='hidden' value='".$_POST['EquipOdoTotal'.$e]."' type='text' /></li>
+            <li><div id='EquipOdoTotal".$e."'>".$_POST['EquipOdoTotal'.$e]."</div><input class='hidden' name='EquipOdoTotal".$e."' value='".$_POST['EquipOdoTotal'.$e]."' type='text' /></li>
         </ul>";
 }
 ?>   
