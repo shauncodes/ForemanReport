@@ -21,38 +21,50 @@
 
 if (isset($_GET["edit"]) && ($_GET["edit"] == "foremen")) {
     if (isset($_GET["f"])) {
-        echo "<br />";
+        //echo "<br />";
         $Foreman = $_GET["f"];
-        
-        $foreman_sql =    "SELECT *
-                        FROM foreman
-                        WHERE foreman.Name = '$Foreman'";
-        $result = $conn->query($foreman_sql);
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $fid = $row["fid"];
-                $StillForeman = $row["StillForeman"];
-            }
-        }
-        if ($StillForeman == 1) {
-            $StatYes = "checked";
-            $StatNo = "";
-        } else if ($StillForeman == 0) {
-            $StatYes = "";
-            $StatNo = "checked";
-        }
-        // action="updatedb.imbed.php?edit=foreman"
-        echo <<<HSD
-            <h5>Edit foreman</h5>
-            <form name="UpdateDB" method="POST" action="updatedb.imbed.php?edit=foreman">
-                <input type="text" name="fid" value="$fid" class="hidden" />
-                <input type="text" name="Name" value="$Foreman" /> <br /><br />
-                <label for="Still">Set as: </label> <br />
-                    <input type="radio" name="Status" value="1" $StatYes /> Still a foreman <br />
-                    <input type="radio" name="Status" value="0" $StatNo /> No longer a foreman <br /><br />
-                    <input type="submit" value="Submit Changes" id="UpdateDBBUTTON" />
-            </form>
+        if ($Foreman == "Add a foreman") {
+            echo <<<HSD
+                <h5>Add foreman</h5>
+                <form name="UpdateDB" method="POST" action="updatedb.imbed.php?add=foreman">
+                    <input type="text" name="Name" value="Foreman Name" onFocus="this.value='';" autocomplete="off" required /> <br /><br />
+                    <label for="Still">Set as: </label> <br />
+                        <input type="radio" name="Status" value="1" required /> Foreman <br />
+                        <input type="radio" name="Status" value="0" /> Not a foreman <br /><br />
+                        <input type="submit" value="Submit Changes" id="UpdateDBBUTTON" />
+                </form>
 HSD;
+        } else {
+            $foreman_sql =    "SELECT *
+                            FROM foreman
+                            WHERE foreman.Name = '$Foreman'";
+            $result = $conn->query($foreman_sql);
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $fid = $row["fid"];
+                    $StillForeman = $row["StillForeman"];
+                }
+            }
+            if ($StillForeman == 1) {
+                $StatYes = "checked";
+                $StatNo = "";
+            } else if ($StillForeman == 0) {
+                $StatYes = "";
+                $StatNo = "checked";
+            }
+            // action="updatedb.imbed.php?edit=foreman"
+            echo <<<HSD
+                <h5>Edit foreman</h5>
+                <form name="UpdateDB" method="POST" action="updatedb.imbed.php?edit=foreman">
+                    <input type="text" name="fid" value="$fid" class="hidden" />
+                    <input type="text" name="Name" value="$Foreman" /> <br /><br />
+                    <label for="Still">Set as: </label> <br />
+                        <input type="radio" name="Status" value="1" $StatYes /> Still a foreman <br />
+                        <input type="radio" name="Status" value="0" $StatNo /> No longer a foreman <br /><br />
+                        <input type="submit" value="Submit Changes" id="UpdateDBBUTTON" />
+                </form>
+HSD;
+        }
     } else {
         echo <<<HearSayDoc
         <h5>Choose foreman</h5>
@@ -69,37 +81,49 @@ HSD;
     }
 } else if (isset($_GET["edit"]) && ($_GET["edit"] == "employees")) {
     if (isset($_GET["e"])) {
-        echo "<br />";
+        //echo "<br />";
         $Employee = $_GET["e"];
-        
-        $emp_sql =    "SELECT *
-                        FROM employee
-                        WHERE employee.Name = '$Employee'";
-        $result = $conn->query($emp_sql);
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $empid = $row["empid"];
-                $StillEmployed = $row["StillEmployed"];
+        if ($Employee == "Add employee") {
+            echo <<<HSD
+                <h5>Add employee</h5>
+                <form name="UpdateDB" method="POST" action="updatedb.imbed.php?add=employee">
+                    <input type="text" name="Name" value="Employee Name" onFocus="this.value='';" autocomplete="off" required /> <br /><br />
+                    <label for="Still">Set as: </label> <br />
+                        <input type="radio" name="Status" value="1" required /> Employed <br />
+                        <input type="radio" name="Status" value="0" /> Not employed <br /><br />
+                        <input type="submit" value="Submit Changes" id="UpdateDBBUTTON" />
+                </form>
+HSD;
+        } else {
+            $emp_sql =    "SELECT *
+                            FROM employee
+                            WHERE employee.Name = '$Employee'";
+            $result = $conn->query($emp_sql);
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $empid = $row["empid"];
+                    $StillEmployed = $row["StillEmployed"];
+                }
             }
+            if ($StillEmployed == 1) {
+                $StatYes = "checked";
+                $StatNo = "";
+            } else if ($StillEmployed == 0) {
+                $StatYes = "";
+                $StatNo = "checked";
+            }
+            echo <<<HSD
+                <h5>Edit employee</h5>
+                <form name="UpdateDB" action="updatedb.imbed.php?edit=employee" method="POST">
+                    <input type="text" name="empid" value="$empid" class="hidden" />
+                    <input type="text" name="Name" value="$Employee" /> <br /><br />
+                    <label for="Still">Set as: </label> <br />
+                        <input type="radio" name="Status" value="1" $StatYes /> Still employed <br />
+                        <input type="radio" name="Status" value="0" $StatNo /> No longer employed <br /><br />
+                        <input type="submit" value="Submit Changes" />
+                </form>
+HSD;
         }
-        if ($StillEmployed == 1) {
-            $StatYes = "checked";
-            $StatNo = "";
-        } else if ($StillEmployed == 0) {
-            $StatYes = "";
-            $StatNo = "checked";
-        }
-        echo <<<HSD
-            <h5>Edit employee</h5>
-            <form name="UpdateDB" action="updatedb.imbed.php?edit=employee" method="POST">
-                <input type="text" name="empid" value="$empid" class="hidden" />
-                <input type="text" name="Name" value="$Employee" /> <br /><br />
-                <label for="Still">Set as: </label> <br />
-                    <input type="radio" name="Status" value="1" $StatYes /> Still employed <br />
-                    <input type="radio" name="Status" value="0" $StatNo /> No longer employed <br /><br />
-                    <input type="submit" value="Submit Changes" />
-            </form>
-HSD;       
     } else {
         echo <<<HearSayDoc
         <h5>Choose employee</h5>
@@ -116,43 +140,59 @@ HSD;
     }
 } else if (isset($_GET["edit"]) && ($_GET["edit"] == "equipment")) {
     if (isset($_GET["eq"])) {
-        echo "<br />";
+        //echo "<br />";
         $Equip = $_GET["eq"];
-        
-        $equip_sql =    "SELECT *
-                        FROM equipment
-                        WHERE equipment.EID = '$Equip'";
-        $result = $conn->query($equip_sql);
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $eqid = $row["eqid"];
-                $Year = $row["Year"];
-                $Make = $row["Make"];
-                $Model = $row["Model"];
-                $StillInService = $row["StillInService"];
+        if ($Equip == "Add equipment") {
+            echo <<<HSD
+                <h5>Add equipment</h5>
+                <form name="UpdateDB" action="updatedb.imbed.php?add=equipment" method="POST">
+                    <input type="text" name="EID" value="Equip ID" onFocus="this.value='';" />
+                    <input type="text" name="Year" value="Year" onFocus="this.value='';" />
+                    <input type="text" name="Make" value="Make" onFocus="this.value='';" />
+                    <input type="text" name="Model" value="Model" onFocus="this.value='';" /><br /><br />
+                    <label for="Still">Set as: </label> <br />
+                        <input type="radio" name="Status" value="1" /> In service <br />
+                        <input type="radio" name="Status" value="0" /> Not in service <br /><br />
+                        <input type="submit" value="Submit Changes" />
+                </form>
+HSD;
+            
+        } else {
+            $equip_sql =    "SELECT *
+                            FROM equipment
+                            WHERE equipment.EID = '$Equip'";
+            $result = $conn->query($equip_sql);
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $eqid = $row["eqid"];
+                    $Year = $row["Year"];
+                    $Make = $row["Make"];
+                    $Model = $row["Model"];
+                    $StillInService = $row["StillInService"];
+                }
             }
+            if ($StillInService == 1) {
+                $StatYes = "checked";
+                $StatNo = "";
+            } else if ($StillInService == 0) {
+                $StatYes = "";
+                $StatNo = "checked";
+            }
+            echo <<<HSD
+                <h5>Edit equipment</h5>
+                <form name="UpdateDB" action="updatedb.imbed.php?edit=equipment" method="POST">
+                    <input type="text" name="eqid" value="$eqid" class="hidden" />
+                    <input type="text" name="EID" value="$Equip" />
+                    <input type="text" name="Year" value="$Year" />
+                    <input type="text" name="Make" value="$Make" />
+                    <input type="text" name="Model" value="$Model" /><br /><br />
+                    <label for="Still">Set as: </label> <br />
+                        <input type="radio" name="Status" value="1" $StatYes /> Still in service <br />
+                        <input type="radio" name="Status" value="0" $StatNo /> No longer in service <br /><br />
+                        <input type="submit" value="Submit Changes" />
+                </form>
+HSD;
         }
-        if ($StillInService == 1) {
-            $StatYes = "checked";
-            $StatNo = "";
-        } else if ($StillInService == 0) {
-            $StatYes = "";
-            $StatNo = "checked";
-        }
-        echo <<<HSD
-            <h5>Edit equipment</h5>
-            <form name="UpdateDB" action="updatedb.imbed.php?edit=equipment" method="POST">
-                <input type="text" name="eqid" value="$eqid" class="hidden" />
-                <input type="text" name="EID" value="$Equip" />
-                <input type="text" name="Year" value="$Year" />
-                <input type="text" name="Make" value="$Make" />
-                <input type="text" name="Model" value="$Model" /><br /><br />
-                <label for="Still">Set as: </label> <br />
-                    <input type="radio" name="Status" value="1" $StatYes /> Still in service <br />
-                    <input type="radio" name="Status" value="0" $StatNo /> No longer in service <br /><br />
-                    <input type="submit" value="Submit Changes" />
-            </form>
-HSD;   
     } else {
         echo <<<HearSayDoc
         <h5>Choose equipment</h5>
