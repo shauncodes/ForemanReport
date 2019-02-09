@@ -1,5 +1,5 @@
 <?php
-include("PHPs/dbconnect.fr.inc.php");
+include("dbconnect.fr.inc.php");
 // We now have use of $conn for mysqli functions.
 
 if ($conn->connect_error) {
@@ -19,7 +19,7 @@ if (isset($_GET["f"])) {
         echo "<h5>" . ucfirst($Foreman) . ":</h5>";
         echo "<ul>";
         while ($row = $result->fetch_assoc()) {
-            echo "<li><a target='new' href='../getfr.php?r=".$row["rid"]."'>".$row["Date"]." - #".$row["JobNum"]."</a></li>";
+            echo "<li><a target='new' href='getfr.php?r=".$row["rid"]."'>".$row["Date"]." - #".$row["JobNum"]."</a></li>";
         }
     }
     echo "</ul>";

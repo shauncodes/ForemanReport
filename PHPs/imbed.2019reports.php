@@ -16,7 +16,7 @@
     
     for ($f = 1; $f <= $ForemanCount; $f++) {
         echo <<<HereDocString
-            <li><a href="#" onclick="loadDoc('imbed.pullfr.php?f=${"Foreman".$f}', displayTwo)">${"Foreman".$f}</a></li>
+            <li><a href="#" onclick="loadDoc('PHPs/imbed.pullfr.php?f=${"Foreman".$f}', displayTwo)">${"Foreman".$f}</a></li>
 HereDocString;
     }
     ?>
