@@ -1,7 +1,7 @@
 
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="Files/admin.css">
+    <!--<link rel="stylesheet" type="text/css" href="../Files/admin.css">-->
     <?php include("dbconnect.fr.inc.php"); ?>
     <!-- We now have use of $conn for mysqli functions -->
     <?php include("query.getforemen.inc.php"); ?>
@@ -67,7 +67,7 @@ HSD;
     } else {
         echo <<<HearSayDoc
         <h5>Choose foreman</h5>
-        <select onChange="loadDoc('imbed.editdb.php?edit=foremen&f='+this.value, displayTwo);">
+        <select onChange="loadDoc('PHPs/imbed.editdb.php?edit=foremen&f='+this.value, displayTwo);">
             <option>-- Select --</option>
             <option value="Add a foreman">Add a foreman</option>
 HearSayDoc;
@@ -126,7 +126,7 @@ HSD;
     } else {
         echo <<<HearSayDoc
         <h5>Choose employee</h5>
-        <select onChange="loadDoc('imbed.editdb.php?edit=employees&e='+this.value, displayTwo);">
+        <select onChange="loadDoc('PHPs/imbed.editdb.php?edit=employees&e='+this.value, displayTwo);">
             <option>-- Select --</option>
             <option value="Add employee">Add employee</option>
 HearSayDoc;
@@ -195,7 +195,7 @@ HSD;
     } else {
         echo <<<HearSayDoc
         <h5>Choose equipment</h5>
-        <select onChange="loadDoc('imbed.editdb.php?edit=equipment&eq='+this.value, displayTwo);">
+        <select onChange="loadDoc('PHPs/imbed.editdb.php?edit=equipment&eq='+this.value, displayTwo);">
             <option>-- Select --</option>
             <option value="Add equipment">Add equipment</option>
 HearSayDoc;
