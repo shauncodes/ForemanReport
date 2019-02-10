@@ -84,36 +84,32 @@ function addTLine(num) {
 }
 
 
+let testPath = {
+    here: location.pathname,
+    newfrReg: /newfr.php$/,
+    verifyfrReg: /verifyfr.php$/,
+    isnewfr: function() {
+        if(this.newfrReg.test(this.here)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
 
 function totalOdo(num) {
-    let here = location.pathname;
-    let newfrReg = /newfr.php$/;
-    let verifyfrReg = /verifyfr.php$/;
-    if(newfrReg.test(here)) {
-        var showTotals = false;
-    } else {
-        var showTotals = true;
-    }
     let startOdo = document.getElementById("EquipOdoStart"+num).value;
     let endOdo = document.getElementById("EquipOdoEnd"+num).value;
     let updateThis = document.getElementById("EquipOdoTotal"+num);
     let total = endOdo - startOdo;
     
-    if (showTotals) {
+    if (!(testPath.isnewfr())) {
         updateThis.innerHTML = total;
     }
     updateThis.nextElementSibling.value = total;
 }
 function totalTime(category, num) {
-    let here = location.pathname;
-    let newfrReg = /newfr.php$/;
-    let verifyfrReg = /verifyfr.php$/;
-    if(newfrReg.test(here)) {
-        var showTotals = false;
-    } else {
-        var showTotals = true;
-    }
-    
     if (category == 1) {
         var cate = "Emp";
     } else if (category == 2) {
@@ -162,7 +158,7 @@ function totalTime(category, num) {
 			minsTotal = 15;
 		}
 	}
-    if (showTotals) {
+    if (!(testPath.isnewfr())) {
         updateThis.innerHTML = (hoursTotal + ":" + minsTotal + addZero);
     }
     updateThis.nextElementSibling.value = (hoursTotal + ":" + minsTotal + addZero);
