@@ -31,17 +31,18 @@
 
 <div class="center">
     <div class="main-container">
-        <div class="left-column">
-            <h4><a href="#" onclick="loadDoc('PHPs/imbed.2019reports.php', displayOne);">Get Foreman Report</a></h4>
+        <div class="left">
+            <h3><a href="#" onclick="loadDoc('PHPs/imbed.2019reports.php', displayOne);">Get Foreman Report</a></h3>
             <br /><br />
-            <h4><a target="new" href="timesheet.php">Get Time Sheet</a></h4>
+            <h3><a target="new" href="timesheet.php">Get Time Sheet</a></h3>
         </div>   
-        <div class="middle-column" id="display">
+        <div class="middle column" id="display">
         </div>
-        <div class="middle-column-2" id="display2">
+        <div class="middle-2 column" id="display2">
         </div>
-        <div class="right-column" id="display3">
+        <div class="right column" id="display3">
         </div>
+
     </div>
 </div>
 
@@ -49,6 +50,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="Files/FRscripts.js"></script>
+    <script src="Files/admin.js"></script>
 </body>
 </html>

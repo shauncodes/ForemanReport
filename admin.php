@@ -30,17 +30,17 @@
 
 <div class="center">
     <div class="main-container">
-        <div class="left-column">
-            <h4>Edit Database</h4>
-            <h5><a href="#" onclick="loadDoc('PHPs/imbed.editdb.php?edit=foremen', displayOne);">Foremen</a></h5>
-            <h5><a href="#" onclick="loadDoc('PHPs/imbed.editdb.php?edit=employees', displayOne);">Employees</a></h5>
-            <h5><a href="#" onclick="loadDoc('PHPs/imbed.editdb.php?edit=equipment', displayOne);">Equipment</a></h5>
+        <div class="left">
+            <h3>Edit Database</h3>
+            <h4><a href="#" onclick="loadDoc('PHPs/imbed.editdb.php?edit=foremen', displayOne);">Foremen</a></h4>
+            <h4><a href="#" onclick="loadDoc('PHPs/imbed.editdb.php?edit=employees', displayOne);">Employees</a></h4>
+            <h4><a href="#" onclick="loadDoc('PHPs/imbed.editdb.php?edit=equipment', displayOne);">Equipment</a></h4>
         </div>   
-        <div class="middle-column" id="display">
+        <div class="middle column" id="display">
         </div>
-        <div class="middle-column-2" id="display2">
+        <div class="middle-2 column" id="display2">
         </div>
-        <div class="right-column" id="display3">
+        <div class="hidden right column" id="display3">
         </div>
     </div>
 </div>
@@ -49,6 +49,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="Files/FRscripts.js"></script>
+    <script src="Files/admin.js"></script>
 </body>
 </html>

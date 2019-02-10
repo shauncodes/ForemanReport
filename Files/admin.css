@@ -2,6 +2,12 @@ ul {
     list-style-type: none;
     padding: 0;
 }
+input[type=text] {
+    max-width: 120px;
+}
+h5 {
+    border-bottom: 2px solid #1673ff;
+}
 .hidden {
     display: none;
 }
@@ -14,17 +20,30 @@ ul {
 .main-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-column-gap: 20px;
+    grid-column-gap: 10px;
     align-items: start;
     height: auto;
 }
-.left-column h5{
-    padding-left: 15px;
+.left {
+    min-width: 230px;
 }
-.middle-column, .middle-column-2 {
+.left h4 {
+    padding-left: 22px;
+}
+.column {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 30px;
+    min-width: 155px;
+}
+.middle, .middle-2 {
 
 }
-.right-column {
+.right {
 
+}
+.border3 {
+    border: 1px solid #1673ff;
+    border-top: 6px solid #1673ff;
 }
 

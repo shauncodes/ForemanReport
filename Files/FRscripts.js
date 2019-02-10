@@ -20,23 +20,26 @@ function loaded() {
         ("click",function(event) {
             event.preventDefault();
             },false);
-        document.getElementById("submitButton").addEventListener("click",checkForeman,false);
+        document.getElementById("submitButton").addEventListener("click",checkForm,false);
     } // else if ( Need to run the regex for verifyfr.php?? ) {}
 }
-function checkForeman() {
+function checkForm() {
+    // First check for a foreman selected.
     var failVar = document.getElementById("foreman").value;
     if (failVar == "Foreman") {
        alert("Please select Foreman.")
     } else {
+        // Then check if there are duplicate employees.
         if(empDuplicates()) {
             console.log("we have a duplicate employee entry.");
             alert("You have a dupilicate employee entry");
         } else {
+            // Now check if there are duplicate equipments.
             if(equipDuplicates()) {
                 console.log("we have a duplicate equipment entry.");
                 alert("You have a duplicate equipment entry.");
             } else {
-                // ok fine, submit the form
+                // Ok fine, submit the form.
                 document.getElementById("createform").submit();
             }
         }
@@ -80,33 +83,6 @@ function equipDuplicates() {
         return false;
     }
 }
-
-
-
-// This is the AJAX for index.php
-function loadDoc(url, cFunction) {
-    var xhr;
-    xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            cFunction(this); // myFunction(this) || "(this)" returns XMLHttpRequest Object, which after executed
-        }
-    };
-    xhr.open("GET", url, true);
-    xhr.send();
-}
-function displayOne(xhr) {
-    document.getElementById("display").innerHTML = xhr.responseText;
-}
-function displayTwo(xhr) {
-    document.getElementById("display2").innerHTML = xhr.responseText;
-}
-function displayThree(xhr) {
-    document.getElementById("display3").innerHTML = xhr.responseText;
-}
-
-
-
 
 
 function addEmpLine(num) {
