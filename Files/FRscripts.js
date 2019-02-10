@@ -3,9 +3,9 @@ window.addEventListener("load", loaded, false);
 function loaded() {
     // Below are eventListeners for submit button on create.php and verify.php
     let here = location.pathname;
-    let createReg = /create.php$/; // Regex for "ending in create.php.
-    let verifyReg = /verify.php$/;
-    if(createReg.test(here)) {
+    let newfrReg = /newfr.php$/; // Regex for "ending in create.php.
+    let verifyfrReg = /verifyfr.php$/;
+    if(newfrReg.test(here)) {
         // Takes the submit away and runs checkForeman() first.
         document.getElementById("submitButton").addEventListener
         ("click",function(event) {
@@ -86,15 +86,34 @@ function addTLine(num) {
 
 
 function totalOdo(num) {
+    let here = location.pathname;
+    let newfrReg = /newfr.php$/;
+    let verifyfrReg = /verifyfr.php$/;
+    if(newfrReg.test(here)) {
+        var showTotals = false;
+    } else {
+        var showTotals = true;
+    }
     let startOdo = document.getElementById("EquipOdoStart"+num).value;
     let endOdo = document.getElementById("EquipOdoEnd"+num).value;
     let updateThis = document.getElementById("EquipOdoTotal"+num);
     let total = endOdo - startOdo;
     
-    updateThis.innerHTML = total;
+    if (showTotals) {
+        updateThis.innerHTML = total;
+    }
     updateThis.nextElementSibling.value = total;
 }
 function totalTime(category, num) {
+    let here = location.pathname;
+    let newfrReg = /newfr.php$/;
+    let verifyfrReg = /verifyfr.php$/;
+    if(newfrReg.test(here)) {
+        var showTotals = false;
+    } else {
+        var showTotals = true;
+    }
+    
     if (category == 1) {
         var cate = "Emp";
     } else if (category == 2) {
@@ -143,7 +162,9 @@ function totalTime(category, num) {
 			minsTotal = 15;
 		}
 	}
-	updateThis.innerHTML = (hoursTotal + ":" + minsTotal + addZero);
+    if (showTotals) {
+        updateThis.innerHTML = (hoursTotal + ":" + minsTotal + addZero);
+    }
     updateThis.nextElementSibling.value = (hoursTotal + ":" + minsTotal + addZero);
 }
 	
