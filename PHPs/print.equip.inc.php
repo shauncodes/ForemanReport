@@ -10,7 +10,7 @@ for ($e = 1, $c = 1; $e < 11; $e++, $c++) {
         <ul id='EquipUL-".$e."' class='".$class."'>
             <li>
                 <label for='Equip".$e."'>Select</label>
-                <select name='Equip".$e."'>
+                <select name='Equip".$e."' id='Equip".$e."'>
                     <option selected>Equip ID</option>";
     
     $equip_sql =    "SELECT equipment.EID
