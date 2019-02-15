@@ -4,7 +4,8 @@ include ("dbconnect.fr.inc.php");
 // We now have use of $conn for mysqli functions
 
 $equip_sql =    "SELECT equipment.EID
-                FROM equipment";
+                FROM equipment
+                WHERE equipment.StillInService = 1";
 $result = $conn->query($equip_sql);
 if ($result->num_rows > 0 ) {
     $EquipCount = $result->num_rows;
