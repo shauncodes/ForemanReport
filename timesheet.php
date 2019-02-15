@@ -148,7 +148,8 @@ for ($e = 1, $r = 3; isset(${"Emp".$e}); $e++, $r++) {
                      FROM empjob
                      JOIN employee ON employee.empid = empjob.fk_empid
                      JOIN report ON report.rid = empjob.fk_rid
-                         WHERE report.Date = '$Date' AND employee.Name = '$Employee'";
+                     JOIN foreman ON foreman.fid = report.fk_fid
+                         WHERE report.Date = '$Date' AND employee.Name = '$Employee' AND foreman.Name = '$Foreman'";
         $employee_result = $conn->query($employee_sql);
         if ($employee_result->num_rows > 0 ) {
             while ($row = $employee_result->fetch_assoc()) {
