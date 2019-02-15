@@ -122,4 +122,10 @@ for ($t = 1; isset($_POST["Truck".$t]) && ($_POST["Truck".$t] != ""); $t++) {
 }
 
 $conn->close();
+
+echo "<br /><br /><br />";
+echo "<script>setTimeout(function () { window.close(); }, 0100)</script>";
+echo "<h1>Thank you, " . $Foreman . ". Please close this window.</h1>";
+
+
 ?>
