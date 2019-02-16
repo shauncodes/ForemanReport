@@ -153,6 +153,7 @@ for ($e = 1, $r = 3; isset(${"Emp".$e}); $e++, $r++) {
         $employee_result = $conn->query($employee_sql);
         if ($employee_result->num_rows > 0 ) {
             while ($row = $employee_result->fetch_assoc()) {
+                $GetApproval = "yes";
                 echo "<div class='job".$j."'> <!-- JOB 1 -->
                         ".$row["TimeIn"]." ".$row["JobNum"]." ".$row["TimeOut"]." ".$row["Total"]."
                     </div>";
@@ -169,6 +170,30 @@ for ($e = 1, $r = 3; isset(${"Emp".$e}); $e++, $r++) {
 	<div class="r13c1">
 	</div>
 	<div class="r13c2">
+        <?php
+        
+        if (isset($GetApproval)) {
+            
+            $CheckForApproval = "SELECT *
+                                FROM approved
+                                WHERE Foreman = '$Foreman' AND Date = '$Date1'";
+            $result = $conn->query($CheckForApproval);
+            if ($result->num_rows > 0) {
+                echo "<div class='approved'>Approved by Mark Fotou <uhh>✔</uhh></div>";
+            } else {
+            echo <<<HSD
+                <form name="super" method="POST" action="approvets.php">
+                    <input type="text" name="Foreman" value="$Foreman" class="hidden" />
+                    <input type="text" name="Date" value="$Date1" class="hidden" />
+                    <input type="password" name="SuperKey" size="12" />
+                    <input type="submit" value="Superintendent Approval" />
+                </form>
+HSD;
+            }
+        }
+        
+        
+        ?>
 	</div>
 
 </div> <!-- CLOSE THE GRID CONTAINER -->
