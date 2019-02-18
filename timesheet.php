@@ -182,7 +182,7 @@ for ($e = 1, $r = 3; isset(${"Emp".$e}); $e++, $r++) {
                 echo "<div class='approved'>Approved by Mark Fotou <uhh>✔</uhh></div>";
             } else {
             echo <<<HSD
-                <form name="super" method="POST" action="approvets.php">
+                <form name="super" method="POST" action="OfficeOnly/approvets.php">
                     <input type="text" name="Foreman" value="$Foreman" class="hidden" />
                     <input type="text" name="Date" value="$Date1" class="hidden" />
                     <input type="password" name="SuperKey" size="12" />

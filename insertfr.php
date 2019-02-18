@@ -1,9 +1,7 @@
 
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "foremanreports";
+include("PHPs/dbconnect.fr.inc.php");
+// We now have use of $conn for mysqli functions
 
 // Start the connection.
 $conn = new mysqli($servername, $username, $password, $dbname);

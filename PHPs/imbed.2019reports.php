@@ -69,7 +69,7 @@ if (isset($_GET["f"])) {
         echo "<h5>" . ucfirst($Foreman) . " | " .$Month. "</h5>";
         echo "<ul>";
         while ($row = $report_result->fetch_assoc()) {
-            echo "<li><a target='new' href='getfr.php?r=".$row["rid"]."'>".$row["Date"]." - #".$row["JobNum"]."</a></li>";
+            echo "<li><a target='new' href='../getfr.php?r=".$row["rid"]."'>".$row["Date"]." - #".$row["JobNum"]."</a></li>";
         }
     }
     echo "</ul>";
@@ -84,7 +84,7 @@ if (isset($_GET["f"])) {
         echo "<ul>";
         while ($row = $foreman_result->fetch_assoc()) {
             echo <<<HSD
-                <li><a href='#' onclick="loadDoc('PHPs/imbed.2019reports.php?m=$Month&f=$row[Name]', displayThree);">$row[Name]</a></li>
+                <li><a href='#' onclick="loadDoc('../PHPs/imbed.2019reports.php?m=$Month&f=$row[Name]', displayThree);">$row[Name]</a></li>
 HSD;        
         }
     }
@@ -93,18 +93,18 @@ HSD;
     echo "<h5>2019 Reports</h5>";
     echo "<ul>";
     echo <<<HereDocString
-        <li><a href="#" onclick="loadDoc('PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">January</a></li>
-        <li><a href="#" onclick="loadDoc('PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">February</a></li>
-        <li><a href="#" onclick="loadDoc('PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">March</a></li>
-        <li><a href="#" onclick="loadDoc('PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">April</a></li>
-        <li><a href="#" onclick="loadDoc('PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">May</a></li>
-        <li><a href="#" onclick="loadDoc('PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">June</a></li>
-        <li><a href="#" onclick="loadDoc('PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">July</a></li>
-        <li><a href="#" onclick="loadDoc('PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">August</a></li>
-        <li><a href="#" onclick="loadDoc('PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">September</a></li>
-        <li><a href="#" onclick="loadDoc('PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">October</a></li>
-        <li><a href="#" onclick="loadDoc('PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">November</a></li>
-        <li><a href="#" onclick="loadDoc('PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">December</a></li>
+        <li><a href="#" onclick="loadDoc('../PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">January</a></li>
+        <li><a href="#" onclick="loadDoc('../PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">February</a></li>
+        <li><a href="#" onclick="loadDoc('../PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">March</a></li>
+        <li><a href="#" onclick="loadDoc('../PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">April</a></li>
+        <li><a href="#" onclick="loadDoc('../PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">May</a></li>
+        <li><a href="#" onclick="loadDoc('../PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">June</a></li>
+        <li><a href="#" onclick="loadDoc('../PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">July</a></li>
+        <li><a href="#" onclick="loadDoc('../PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">August</a></li>
+        <li><a href="#" onclick="loadDoc('../PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">September</a></li>
+        <li><a href="#" onclick="loadDoc('../PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">October</a></li>
+        <li><a href="#" onclick="loadDoc('../PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">November</a></li>
+        <li><a href="#" onclick="loadDoc('../PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">December</a></li>
         
 HereDocString;
     echo "</ul>";

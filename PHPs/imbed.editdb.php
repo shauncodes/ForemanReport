@@ -26,7 +26,7 @@ if (isset($_GET["edit"]) && ($_GET["edit"] == "foremen")) {
         if ($Foreman == "Add a foreman") {
             echo <<<HSD
                 <h5>Add foreman</h5>
-                <form name="UpdateDB" method="POST" action="PHPs/imbed.updatedb.php?add=foreman">
+                <form name="UpdateDB" method="POST" action="../PHPs/imbed.updatedb.php?add=foreman">
                     <input type="text" name="Name" value="Foreman Name" onFocus="this.value='';" autocomplete="off" required /> <br /><br />
                     <label for="Still">Set as: </label> <br />
                         <input type="radio" name="Status" value="1" required /> Foreman <br />
@@ -54,7 +54,7 @@ HSD;
             }
             echo <<<HSD
                 <h5>Edit foreman</h5>
-                <form name="UpdateDB" method="POST" action="PHPs/imbed.updatedb.php?edit=foreman">
+                <form name="UpdateDB" method="POST" action="../PHPs/imbed.updatedb.php?edit=foreman">
                     <input type="text" name="fid" value="$fid" class="hidden" />
                     <input type="text" name="Name" value="$Foreman" /> <br /><br />
                     <label for="Still">Set as: </label> <br />
@@ -67,7 +67,7 @@ HSD;
     } else {
         echo <<<HearSayDoc
         <h5>Choose foreman</h5>
-        <select onChange="loadDoc('PHPs/imbed.editdb.php?edit=foremen&f='+this.value, displayTwo);">
+        <select onChange="loadDoc('../PHPs/imbed.editdb.php?edit=foremen&f='+this.value, displayTwo);">
             <option>-- Select --</option>
             <option value="Add a foreman">Add a foreman</option>
 HearSayDoc;
@@ -85,7 +85,7 @@ HSD;
         if ($Employee == "Add employee") {
             echo <<<HSD
                 <h5>Add employee</h5>
-                <form name="UpdateDB" method="POST" action="PHPs/imbed.updatedb.php?add=employee">
+                <form name="UpdateDB" method="POST" action="../PHPs/imbed.updatedb.php?add=employee">
                     <input type="text" name="Name" value="Employee Name" onFocus="this.value='';" autocomplete="off" required /> <br /><br />
                     <label for="Still">Set as: </label> <br />
                         <input type="radio" name="Status" value="1" required /> Employed <br />
@@ -113,7 +113,7 @@ HSD;
             }
             echo <<<HSD
                 <h5>Edit employee</h5>
-                <form name="UpdateDB" action="PHPs/imbed.updatedb.php?edit=employee" method="POST">
+                <form name="UpdateDB" action="../PHPs/imbed.updatedb.php?edit=employee" method="POST">
                     <input type="text" name="empid" value="$empid" class="hidden" />
                     <input type="text" name="Name" value="$Employee" /> <br /><br />
                     <label for="Still">Set as: </label> <br />
@@ -126,7 +126,7 @@ HSD;
     } else {
         echo <<<HearSayDoc
         <h5>Choose employee</h5>
-        <select onChange="loadDoc('PHPs/imbed.editdb.php?edit=employees&e='+this.value, displayTwo);">
+        <select onChange="loadDoc('../PHPs/imbed.editdb.php?edit=employees&e='+this.value, displayTwo);">
             <option>-- Select --</option>
             <option value="Add employee">Add employee</option>
 HearSayDoc;
@@ -144,7 +144,7 @@ HSD;
         if ($Equip == "Add equipment") {
             echo <<<HSD
                 <h5>Add equipment</h5>
-                <form name="UpdateDB" action="PHPs/imbed.updatedb.php?add=equipment" method="POST">
+                <form name="UpdateDB" action="../PHPs/imbed.updatedb.php?add=equipment" method="POST">
                     <input type="text" name="EID" value="Equip ID" onFocus="this.value='';" />
                     <input type="text" name="Year" value="Year" onFocus="this.value='';" />
                     <input type="text" name="Make" value="Make" onFocus="this.value='';" />
@@ -179,7 +179,7 @@ HSD;
             }
             echo <<<HSD
                 <h5>Edit equipment</h5>
-                <form name="UpdateDB" action="PHPs/imbed.updatedb.php?edit=equipment" method="POST">
+                <form name="UpdateDB" action=".../PHPs/imbed.updatedb.php?edit=equipment" method="POST">
                     <input type="text" name="eqid" value="$eqid" class="hidden" />
                     <input type="text" name="EID" value="$Equip" />
                     <input type="text" name="Year" value="$Year" />
@@ -195,7 +195,7 @@ HSD;
     } else {
         echo <<<HearSayDoc
         <h5>Choose equipment</h5>
-        <select onChange="loadDoc('PHPs/imbed.editdb.php?edit=equipment&eq='+this.value, displayTwo);">
+        <select onChange="loadDoc('../PHPs/imbed.editdb.php?edit=equipment&eq='+this.value, displayTwo);">
             <option>-- Select --</option>
             <option value="Add equipment">Add equipment</option>
 HearSayDoc;

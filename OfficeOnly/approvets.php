@@ -1,6 +1,6 @@
 <?php
 
-include("PHPs/dbconnect.fr.inc.php");
+include("../PHPs/dbconnect.fr.inc.php");
 // We now have use of $conn for mysqli functions
 
 $Foreman = $_POST["Foreman"];
@@ -23,7 +23,7 @@ if ($_POST["SuperKey"] == $pass) {
         echo "uhhh mightve had an error. Call Shaun and read him this: " . $conn->error;
     } else {
         echo "<script>alert('Thank you Mr. Fotou. You will be redirected back to timesheet page.');</script>";
-        echo "<script>setTimeout(function () { window.location = 'timesheet.php'; }, 0100)</script>";
+        echo "<script>setTimeout(function () { window.location = '../timesheet.php'; }, 0100)</script>";
         
     }
 } else {

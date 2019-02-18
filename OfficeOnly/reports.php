@@ -3,9 +3,9 @@
 <head>
 	<title>Get Reports</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="Files/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../Files/normalize.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="Files/admin.css">
+    <link rel="stylesheet" type="text/css" href="../Files/admin.css">
 </head>
 <body>
 
@@ -19,7 +19,7 @@
 			<li><a href="../../INFO/current/18joblist.php">2018 Joblist</a></li>
 			<li><a href="../../INFO/current/19joblist.php">2019 Joblist</a></li>
 			<li><a href="../../INFO/current/equiplist.php">Equipment</a></li>
-			<li><a href="index.php">Foreman Report</a></li>
+			<li><a href="../index.php">Foreman Report</a></li>
 			<li class="active"><a href="reports.php">Get Reports</a></li>
             <li><a href="admin.php">Admin Panel</a></li>
 		</ul>
@@ -31,9 +31,9 @@
 <div class="center">
     <div class="main-container">
         <div class="left">
-            <h3><a href="#" onclick="loadDoc('PHPs/imbed.2019reports.php', displayOne);">Get Foreman Report</a></h3>
+            <h3><a href="#" onclick="loadDoc('../PHPs/imbed.2019reports.php', displayOne);">Get Foreman Report</a></h3>
             <br /><br />
-            <h3><a target="new" href="timesheet.php">Get Time Sheet</a></h3>
+            <h3><a target="new" href="../timesheet.php">Get Time Sheet</a></h3>
         </div>   
         <div class="middle column" id="display">
         </div>
@@ -49,6 +49,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="Files/admin.js"></script>
+    <script src="../Files/admin.js"></script>
 </body>
 </html>
