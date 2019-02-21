@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
     <!--<link rel="stylesheet" type="text/css" href="../Files/admin.css">-->
@@ -24,16 +23,16 @@ if (isset($_GET["edit"]) && ($_GET["edit"] == "foremen")) {
         //echo "<br />";
         $Foreman = $_GET["f"];
         if ($Foreman == "Add a foreman") {
-            echo <<<HSD
+            echo <<<htmlAndJS
                 <h5>Add foreman</h5>
                 <form name="UpdateDB" method="POST" action="../PHPs/imbed.updatedb.php?add=foreman">
-                    <input type="text" name="Name" value="Foreman Name" onFocus="this.value='';" autocomplete="off" required /> <br /><br />
+                    <input type="text" name="Name" placeholder="Foreman Name" onFocus="this.value='';" autocomplete="off" required /> <br /><br />
                     <label for="Still">Set as: </label> <br />
                         <input type="radio" name="Status" value="1" required /> Foreman <br />
                         <input type="radio" name="Status" value="0" /> Not a foreman <br /><br />
                         <input type="submit" value="Submit Changes" id="UpdateDBBUTTON" />
                 </form>
-HSD;
+htmlAndJS;
         } else {
             $foreman_sql =    "SELECT *
                             FROM foreman
@@ -52,7 +51,7 @@ HSD;
                 $StatYes = "";
                 $StatNo = "checked";
             }
-            echo <<<HSD
+            echo <<<htmlAndJS
                 <h5>Edit foreman</h5>
                 <form name="UpdateDB" method="POST" action="../PHPs/imbed.updatedb.php?edit=foreman">
                     <input type="text" name="fid" value="$fid" class="hidden" />
@@ -62,19 +61,19 @@ HSD;
                         <input type="radio" name="Status" value="0" $StatNo /> No longer a foreman <br /><br />
                         <input type="submit" value="Submit Changes" id="UpdateDBBUTTON" />
                 </form>
-HSD;
+htmlAndJS;
         }
     } else {
-        echo <<<HearSayDoc
+        echo <<<htmlAndJS
         <h5>Choose foreman</h5>
         <select onChange="loadDoc('../PHPs/imbed.editdb.php?edit=foremen&f='+this.value, displayTwo);">
             <option>-- Select --</option>
             <option value="Add a foreman">Add a foreman</option>
-HearSayDoc;
+htmlAndJS;
         for ($f = 1; $f <= $ForemanCount; $f++) {
-            echo <<<HSD
+            echo <<<htmlAndJS
             <option value="${'Foreman'.$f}">${'Foreman'.$f}</option>;
-HSD;
+htmlAndJS;
         }
         echo "</select>";
     }
@@ -83,16 +82,16 @@ HSD;
         //echo "<br />";
         $Employee = $_GET["e"];
         if ($Employee == "Add employee") {
-            echo <<<HSD
+            echo <<<htmlAndJS
                 <h5>Add employee</h5>
                 <form name="UpdateDB" method="POST" action="../PHPs/imbed.updatedb.php?add=employee">
-                    <input type="text" name="Name" value="Employee Name" onFocus="this.value='';" autocomplete="off" required /> <br /><br />
+                    <input type="text" name="Name" placeholder="Employee Name" autocomplete="off" required /> <br /><br />
                     <label for="Still">Set as: </label> <br />
                         <input type="radio" name="Status" value="1" required /> Employed <br />
                         <input type="radio" name="Status" value="0" /> Not employed <br /><br />
                         <input type="submit" value="Submit Changes" id="UpdateDBBUTTON" />
                 </form>
-HSD;
+htmlAndJS;
         } else {
             $emp_sql =    "SELECT *
                             FROM employee
@@ -111,7 +110,7 @@ HSD;
                 $StatYes = "";
                 $StatNo = "checked";
             }
-            echo <<<HSD
+            echo <<<htmlAndJS
                 <h5>Edit employee</h5>
                 <form name="UpdateDB" action="../PHPs/imbed.updatedb.php?edit=employee" method="POST">
                     <input type="text" name="empid" value="$empid" class="hidden" />
@@ -121,19 +120,19 @@ HSD;
                         <input type="radio" name="Status" value="0" $StatNo /> No longer employed <br /><br />
                         <input type="submit" value="Submit Changes" />
                 </form>
-HSD;
+htmlAndJS;
         }
     } else {
-        echo <<<HearSayDoc
+        echo <<<htmlAndJS
         <h5>Choose employee</h5>
         <select onChange="loadDoc('../PHPs/imbed.editdb.php?edit=employees&e='+this.value, displayTwo);">
             <option>-- Select --</option>
             <option value="Add employee">Add employee</option>
-HearSayDoc;
+htmlAndJS;
         for ($n = 1; $n <= $EmpCount; $n++) {
-            echo <<<HSD
+            echo <<<htmlAndJS
             <option value="${'Emp'.$n}">${'Emp'.$n}</option>;
-HSD;
+htmlAndJS;
         }
         echo "</select>";
     }
@@ -142,19 +141,19 @@ HSD;
         //echo "<br />";
         $Equip = $_GET["eq"];
         if ($Equip == "Add equipment") {
-            echo <<<HSD
+            echo <<<htmlAndJS
                 <h5>Add equipment</h5>
                 <form name="UpdateDB" action="../PHPs/imbed.updatedb.php?add=equipment" method="POST">
-                    <input type="text" name="EID" value="Equip ID" onFocus="this.value='';" />
-                    <input type="text" name="Year" value="Year" onFocus="this.value='';" />
-                    <input type="text" name="Make" value="Make" onFocus="this.value='';" />
-                    <input type="text" name="Model" value="Model" onFocus="this.value='';" /><br /><br />
+                    <input type="text" name="EID" placeholder="Equip ID" autocomlete="off" required />
+                    <input type="text" name="Year" placeholder="Year" autocomlete="off" required />
+                    <input type="text" name="Make" placeholder="Make" autocomlete="off" required />
+                    <input type="text" name="Model" placeholder="Model" autocomlete="off" required /><br /><br />
                     <label for="Still">Set as: </label> <br />
-                        <input type="radio" name="Status" value="1" /> In service <br />
+                        <input type="radio" name="Status" value="1" required /> In service <br />
                         <input type="radio" name="Status" value="0" /> Not in service <br /><br />
                         <input type="submit" value="Submit Changes" />
                 </form>
-HSD;
+htmlAndJS;
             
         } else {
             $equip_sql =    "SELECT *
@@ -177,7 +176,7 @@ HSD;
                 $StatYes = "";
                 $StatNo = "checked";
             }
-            echo <<<HSD
+            echo <<<htmlAndJS
                 <h5>Edit equipment</h5>
                 <form name="UpdateDB" action=".../PHPs/imbed.updatedb.php?edit=equipment" method="POST">
                     <input type="text" name="eqid" value="$eqid" class="hidden" />
@@ -190,19 +189,19 @@ HSD;
                         <input type="radio" name="Status" value="0" $StatNo /> No longer in service <br /><br />
                         <input type="submit" value="Submit Changes" />
                 </form>
-HSD;
+htmlAndJS;
         }
     } else {
-        echo <<<HearSayDoc
+        echo <<<htmlAndJS
         <h5>Choose equipment</h5>
         <select onChange="loadDoc('../PHPs/imbed.editdb.php?edit=equipment&eq='+this.value, displayTwo);">
             <option>-- Select --</option>
             <option value="Add equipment">Add equipment</option>
-HearSayDoc;
+htmlAndJS;
         for ($eq = 1; $eq <= $EquipCount; $eq++) {
-            echo <<<HSD
+            echo <<<htmlAndJS
             <option value="${'EquipID'.$eq}">${'EquipID'.$eq}</option>;
-HSD;
+htmlAndJS;
         }
         echo "</select>";
     }

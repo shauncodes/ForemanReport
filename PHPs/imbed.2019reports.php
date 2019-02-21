@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
     <?php include("dbconnect.fr.inc.php"); ?>
@@ -73,7 +72,7 @@ if (isset($_GET["f"])) {
         }
     }
     echo "</ul>";
-} else if ((isset($Month)) && (!isset($Foreman))) {
+} else if ((isset($Month)) && (!isset($_GET["f"]))) {
     $foreman_sql = "SELECT DISTINCT foreman.Name
                     FROM foreman
                     JOIN report ON report.fk_fid = foreman.fid
@@ -83,16 +82,16 @@ if (isset($_GET["f"])) {
         echo "<h5>".$Month." 2019</h5>";
         echo "<ul>";
         while ($row = $foreman_result->fetch_assoc()) {
-            echo <<<HSD
-                <li><a href='#' onclick="loadDoc('../PHPs/imbed.2019reports.php?m=$Month&f=$row[Name]', displayThree);">$row[Name]</a></li>
-HSD;        
+            echo <<<htmlAndJS
+                <li><a href="#" onclick="loadDoc('../PHPs/imbed.2019reports.php?m=$Month&f=$row[Name]', displayThree);">$row[Name]</a></li>
+htmlAndJS;
         }
     }
     echo "</ul>";
 } else {
     echo "<h5>2019 Reports</h5>";
     echo "<ul>";
-    echo <<<HereDocString
+    echo <<<htmlAndJS
         <li><a href="#" onclick="loadDoc('../PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">January</a></li>
         <li><a href="#" onclick="loadDoc('../PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">February</a></li>
         <li><a href="#" onclick="loadDoc('../PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">March</a></li>
@@ -105,8 +104,7 @@ HSD;
         <li><a href="#" onclick="loadDoc('../PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">October</a></li>
         <li><a href="#" onclick="loadDoc('../PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">November</a></li>
         <li><a href="#" onclick="loadDoc('../PHPs/imbed.2019reports.php?m='+this.innerHTML, displayTwo)">December</a></li>
-        
-HereDocString;
+htmlAndJS;
     echo "</ul>";
 }
     

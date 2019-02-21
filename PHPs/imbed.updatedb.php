@@ -3,6 +3,7 @@ include("dbconnect.fr.inc.php");
 
 if (isset($_GET["edit"])) {
     $UpdateHere = $_GET["edit"];
+    
     if ($UpdateHere == "foreman") {
         $fid = $_POST["fid"];
         $Foreman = $_POST["Name"];
