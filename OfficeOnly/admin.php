@@ -15,9 +15,9 @@
 		<a class="navbar-brand" style="padding-right:60px;font-size:2em">BFP</a>
 		</div>
 		<ul class="nav navbar-nav">
-			<li><a href="../../INFO/current/18joblist.php">2018 Joblist</a></li>
-			<li><a href="../../INFO/current/19joblist.php">2019 Joblist</a></li>
-			<li><a href="../../INFO/current/equiplist.php">Equipment</a></li>
+			<li><a href="../../../INFO/current/18joblist.php">2018 Joblist</a></li>
+			<li><a href="../../../INFO/current/19joblist.php">2019 Joblist</a></li>
+			<li><a href="../../../INFO/current/equiplist.php">Equipment</a></li>
 			<li><a href="../index.php">Foreman Report</a></li>
             <li><a href="reports.php">Get Reports</a></li>
 			<li class="active"><a href="admin.php">Admin Panel</a></li>
