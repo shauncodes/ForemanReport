@@ -23,7 +23,7 @@
 			<li><a href="../../INFO/current/19joblist.php">2019 Joblist</a></li>
 			<li><a href="../../INFO/current/equiplist.php">Equipment</a></li>
 			<li class="active"><a href="index.php">Foreman Report</a></li>
-            <li><a href="OfficeOnly/reports.php">Get Reports</a></li>
+            <li><a href="reports.php">Get Reports</a></li>
 			<li><a href="OfficeOnly/admin.php">Admin Panel</a></li>
 		</ul>
 	</div>

@@ -3,20 +3,20 @@
 <head>
 	<title>Close this to go back</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="Files/normalize.css">
-	<link rel="stylesheet" type="text/css" href="Files/TSmain.css">
+	<link rel="stylesheet" type="text/css" href="../Files/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../Files/TSmain.css">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.css">
     <?php
 
-    include("PHPs/dbconnect.fr.inc.php");
+    include("../PHPs/dbconnect.fr.inc.php");
     // We now have use of $conn for mysqli functions
-    include("PHPs/query.getforemen.inc.php");
+    include("../PHPs/query.getforemen.inc.php");
     // This gives use of $ForemanCount and $Foreman_ for the selectbox
     if (isset($_POST["Foreman"]) && isset($_POST["Date"])) {
-        include("PHPs/work.gettsdates.inc.php");
+        include("../PHPs/work.gettsdates.inc.php");
         // This gives use of $Day1-$Day7 and $Date1-$Date7
-        include("PHPs/query.getts.inc.php");
+        include("../PHPs/query.getts.inc.php");
         // This queries the DB for all employees with jobs under selected
         // $Foreman for $Date1-$Date7.
     }
@@ -68,7 +68,7 @@
 <!-- This row is for the Days and Dates -->
 
 	<div class="r2c1">
-		<img src="Files/bfplogo.png" width="140px">
+		<img src="../Files/bfplogo.png" width="140px">
 	</div>
 	<div class="r2c2 leftblackborder">
 		<div class="theday">
@@ -182,7 +182,7 @@ for ($e = 1, $r = 3; isset(${"Emp".$e}); $e++, $r++) {
                 echo "<div class='approved'>Approved by Mark Fotou <uhh>✔</uhh></div>";
             } else {
             echo <<<HSD
-                <form name="super" method="POST" action="OfficeOnly/approvets.php">
+                <form name="super" method="POST" action="approvets.php">
                     <input type="text" name="Foreman" value="$Foreman" class="hidden" />
                     <input type="text" name="Date" value="$Date1" class="hidden" />
                     <input type="password" name="SuperKey" size="12" />
@@ -203,7 +203,7 @@ HSD;
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.js"></script>
-	<script src="Files/TSscripts.js"></script>
+	<script src="../Files/TSscripts.js"></script>
 
 </body>
 </html>
