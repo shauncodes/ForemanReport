@@ -86,7 +86,7 @@ function equipDuplicates() {
 
 
 function addEmpLine(num) {
-    if (num < 11) {
+    if (num < 16) {
         $("#EmpUL-"+num).attr("class", "");
         num++;
         $("#NextEmpLineBUTTON").attr("onClick", "addEmpLine("+num+")");
