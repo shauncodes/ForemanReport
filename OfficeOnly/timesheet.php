@@ -167,9 +167,9 @@ for ($e = 1, $r = 3; isset(${"Emp".$e}); $e++, $r++) {
 
 ?>
 
-	<div class="r13c1">
+	<div class="r15c1">
 	</div>
-	<div class="r13c2">
+	<div class="r15c2">
         <?php
         
         if (isset($GetApproval)) {
