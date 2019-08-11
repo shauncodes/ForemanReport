@@ -13,10 +13,10 @@
     // We now have use of $conn for mysqli functions
     include("../PHPs/query.getforemen.inc.php");
     // This gives use of $ForemanCount and $Foreman_ for the selectbox
-    if (isset($_POST["Foreman"]) && isset($_POST["Date"])) {
+    if (isset($_POST["Date"])) {
         include("../PHPs/work.gettsdates.inc.php");
         // This gives use of $Day1-$Day7 and $Date1-$Date7
-        include("../PHPs/query.getts.inc.php");
+        include("../PHPs/query.gettsall.inc.php");
         // This queries the DB for all employees with jobs under selected
         // $Foreman for $Date1-$Date7.
     }
@@ -38,17 +38,7 @@
         <?php
         if (!isset($_POST["Date"])) {
             echo "
-        <form action='timesheet.php' method='POST' id='createtsFORM'>
-			<p>Foreman: 
-				<select id='foreman' name='Foreman' required>
-					<option>-- select --</option>";
-            for ($f = 1; $f <= $ForemanCount; $f++) {
-                echo "
-                    <option value='${Foreman.$f}'>${Foreman.$f}</option>";
-            }
-            echo "
-				</select>
-			</p>
+        <form action='alltimes.php' method='POST' id='createtsFORM'>
 			<p>Time Sheet for week starting on: <input id='datepicker' name='Date' type='text' size='15' autocomplete='off' required />
 			</p>
             <p>
@@ -56,7 +46,7 @@
             </p>
         </form>";
         } else {
-            echo "<a class='print-hide' href='timesheet.php'>Start Over</a>";
+            echo "<a class='print-hide' href='alltimes.php'>Start Over</a>";
         }
         ?>
                         
@@ -149,7 +139,7 @@ for ($e = 1, $r = 3; isset(${"Emp".$e}); $e++, $r++) {
                      JOIN employee ON employee.empid = empjob.fk_empid
                      JOIN report ON report.rid = empjob.fk_rid
                      JOIN foreman ON foreman.fid = report.fk_fid
-                         WHERE report.Date = '$Date' AND employee.Name = '$Employee' AND foreman.Name = '$Foreman'";
+                         WHERE report.Date = '$Date' AND employee.Name = '$Employee'";
         $employee_result = $conn->query($employee_sql);
         if ($employee_result->num_rows > 0 ) {
             while ($row = $employee_result->fetch_assoc()) {
@@ -170,30 +160,7 @@ for ($e = 1, $r = 3; isset(${"Emp".$e}); $e++, $r++) {
 	<div class="r15c1">
 	</div>
 	<div class="r15c2">
-        <?php
-        
-        if (isset($GetApproval)) {
-            
-            $CheckForApproval = "SELECT *
-                                FROM approved
-                                WHERE Foreman = '$Foreman' AND Date = '$Date1'";
-            $result = $conn->query($CheckForApproval);
-            if ($result->num_rows > 0) {
-                echo "<div class='approved'>Approved by Mark Fotou <uhh>✔</uhh></div>";
-            } else {
-            echo <<<HSD
-                <form name="super" method="POST" action="approvets.php">
-                    <input type="text" name="Foreman" value="$Foreman" class="hidden" />
-                    <input type="text" name="Date" value="$Date1" class="hidden" />
-                    <input type="password" name="SuperKey" size="12" />
-                    <input type="submit" value="Superintendent Approval" />
-                </form>
-HSD;
-            }
-        }
-        
-        
-        ?>
+		<!-- This held the superintendent approval -->
 	</div>
 
 </div> <!-- CLOSE THE GRID CONTAINER -->
@@ -203,7 +170,7 @@ HSD;
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.js"></script>
-	<script src="../Files/TSscripts.js"></script>
+	<script src="../Files/TSscripts2.js"></script>
 
 </body>
 </html>

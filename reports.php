@@ -34,6 +34,8 @@
             <h3><a href="#" onclick="loadDoc('PHPs/imbed.2019reports.php', displayOne);">Get Foreman Report</a></h3>
             <br /><br />
             <h3><a target="new" href="OfficeOnly/timesheet.php">Get Time Sheet</a></h3>
+            <br /><br />
+            <h3><a target="new" href="OfficeOnly/alltimes.php">All Employee Times</a></h3>            
         </div>   
         <div class="middle column" id="display">
         </div>
